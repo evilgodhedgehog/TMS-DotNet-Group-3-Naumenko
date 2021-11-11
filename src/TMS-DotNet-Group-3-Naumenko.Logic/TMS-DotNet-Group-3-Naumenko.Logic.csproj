@@ -13,10 +13,16 @@
     <None Remove="Interfaces\" />
     <None Remove="Models\" />
     <None Remove="Managers\" />
+    <None Remove="Flurl.Http" />
+    <None Remove="Flurl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Models\" />
     <Folder Include="Managers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Flurl.Http" Version="3.2.0" />
+    <PackageReference Include="Flurl" Version="3.0.2" />
   </ItemGroup>
 </Project>
