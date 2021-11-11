@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TMS_DotNet_Group_3_Naumenko.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TMS-DotNet-Group-3-Naumenko.Logic\TMS-DotNet-Group-3-Naumenko.Logic.csproj" />
+  </ItemGroup>
+</Project>
