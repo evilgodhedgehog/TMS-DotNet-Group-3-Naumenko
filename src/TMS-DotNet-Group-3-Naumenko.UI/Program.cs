@@ -1,13 +1,14 @@
-﻿using System;
+﻿using TMS_DotNet_Group_3_Naumenko.Logic;
 
 namespace TMS_DotNet_Group_3_Naumenko.UI
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            
+            Start start = new Start();
+            start.CreateResponce();
+            start.AdvertisementNews();
         }
     }
 }
-
