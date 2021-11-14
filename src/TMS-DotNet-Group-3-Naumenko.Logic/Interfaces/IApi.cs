@@ -18,6 +18,6 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Interfaces
             return null;
         }
 
-        public void ProcessResult<T>(T result);
+        public void ProcessResult<T>(T APIresponse);
     }
 }

@@ -16,11 +16,11 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
             while (!isStop)
             {
                 Console.WriteLine("Work modes:" +
-                    "\n\t1 - get random password (Andrey)" +
-                    "\n\t2 - get Holiday on input date in Singapore (Katerina)" +
-                    "\n\t3 - get Registered domain names (Dmitry)" +
-                    "\n\t4 - ... (Tatyana)");
-                int mode = 2;
+                                  "\n\t1 - get random password (Andrey)" +
+                                  "\n\t2 - get Holiday on input date in Singapore (Katerina)" +
+                                  "\n\t3 - get Registered domain names (Dmitry)" +
+                                  "\n\t4 - ... (Tatyana)");
+                int mode;
                 while (true)
                 {
                     Console.WriteLine("Enter work mode:");
@@ -30,37 +30,46 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                         Console.WriteLine("Incorrect work mode!");
                         continue;
                     }
+
                     break;
                 }
+
                 switch (mode)
                 {
                     case 1:
-                        {                            
-                        }
+                    {
+                    }
                         break;
 
                     case 2:
-                        {
-                            api = new GetHolidayApi();
-                        }
+                    {
+                        api = new GetHolidayApi();
+                    }
                         break;
 
                     case 3:
-                        {
-                        }
+                    {
+                    }
 
                         break;
 
                     case 4:
-                        {
-                        }
+                    {
+                    }
 
                         break;
                 }
 
-                api.Initialize();
-                var result = await api.GetQueryResultAsync();
-                api.ProcessResult(result);
+                try
+                {
+                    api.Initialize();
+                    var result = await api.GetQueryResultAsync();
+                    api.ProcessResult(result);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
 
                 isStop = CommonHelper.AnswerToTheYesNoQuestion("Exit?");
             }
