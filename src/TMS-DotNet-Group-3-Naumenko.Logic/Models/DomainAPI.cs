@@ -7,7 +7,7 @@ using Flurl.Http;
 
 namespace TMS_DotNet_Group_3_Naumenko.Logic.Models
 {
-    public class DomainAPI : IAPI
+    public class DomainAPI : IApi
     {
         public string Web { get; set; }
         public List<string> PathSegments { get; set; }
@@ -27,6 +27,16 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Models
                .SetQueryParams(QueryParams)
                .GetJsonAsync();
             return result;
+        }
+
+        void IApi.Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IApi.ProcessResult<T>(T result)
+        {
+            throw new NotImplementedException();
         }
     }
 }
