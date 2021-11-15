@@ -19,7 +19,7 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                     "\n\t1 - get random password (Andrey)" +
                     "\n\t2 - get Holiday on input date in Singapore (Katerina)" +
                     "\n\t3 - get Registered domain names (Dmitry)" +
-                    "\n\t4 - ... (Tatyana)\n");
+                    "\n\t4 - get Weather and News the city (Tatyana)\n");
 
             while (!isStop)
             {

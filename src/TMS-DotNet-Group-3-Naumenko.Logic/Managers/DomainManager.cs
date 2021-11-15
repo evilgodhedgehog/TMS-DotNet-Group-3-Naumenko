@@ -84,9 +84,9 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
 
         private void ServerResponseResult(List<string> pathSegments, List<string> queryParams)
         {
-            DomainAPI domain = new("https://api.domainsdb.info", pathSegments, queryParams);
+            DomainAPI web = new("https://api.domainsdb.info", pathSegments, queryParams);
 
-            var getResults = domain.GetData().Result;
+            var getResults = web.GetData().Result;
 
             foreach (var result in getResults)
             {
@@ -100,8 +100,6 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
                     }
                 }
             }
-
-            //Console.WriteLine(getResults);
         }
 
         private string CheckingEmptyInput()

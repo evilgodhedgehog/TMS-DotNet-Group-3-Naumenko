@@ -5,7 +5,7 @@ namespace TMS_DotNet_Group_3_Naumenko.Data.Models
 {
     public class Domain
     {
-        public string DomainName { get; set; }
+        public string domain { get; set; }
         public DateTime Create_date { get; set; }
         public DateTime Update_date { get; set; }
         public string Country { get; set; }
@@ -17,7 +17,7 @@ namespace TMS_DotNet_Group_3_Naumenko.Data.Models
         public object TXT { get; set; }
     }
 
-    public class Example
+    public class Response
     {
         public List<Domain> Domains { get; set; }
         public int Total { get; set; }
