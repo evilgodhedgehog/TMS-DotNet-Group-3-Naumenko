@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
+using TMS_DotNet_Group_3_Naumenko.Logic;
+using TMS_DotNet_Group_3_Naumenko.Logic.Helpers;
 using TMS_DotNet_Group_3_Naumenko.Logic.Interfaces;
 using TMS_DotNet_Group_3_Naumenko.Logic.APIs;
 using System.Threading.Tasks;
-using TMS_DotNet_Group_3_Naumenko.Logic.Helpers;
 
 namespace TMS_DotNet_Group_3_Naumenko.UI
 {
@@ -37,11 +39,25 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                     case 1:
                         {
                             api = new RandomPasswordApi();
+                            api.Initialize();
+                            var result = await api.GetQueryResultAsync();
+                            api.ProcessResult(result);
                         }
                         break;
                     case 2:
                         {
-
+                          api = new GetHolidayApi();
+                          
+                          try
+                          {
+                             api.Initialize();
+                             var result = await api.GetQueryResultAsync();
+                             api.ProcessResult(result);
+                          }
+                          catch (Exception exception)
+                          {
+                             Console.WriteLine(exception.Message);
+                          }
                         }
                         break;
                     case 3:
@@ -56,13 +72,9 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                         }
                         break;                        
                 }
-                api.Initialize();
-                var result = await api.GetQueryResultAsync();
-                api.ProcessResult(result);
-                                
+                
                 isStop = CommonHelper.AnswerToTheYesNoQuestion("Exit?");
             }
         }
     }
 }
-

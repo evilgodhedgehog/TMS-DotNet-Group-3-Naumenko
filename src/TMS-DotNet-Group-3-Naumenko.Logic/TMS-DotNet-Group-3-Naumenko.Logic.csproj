@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -10,11 +10,19 @@
     <ProjectReference Include="..\TMS-DotNet-Group-3-Naumenko.Data\TMS-DotNet-Group-3-Naumenko.Data.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Interfaces\" />
     <None Remove="Models\" />
+    <None Remove="Interfaces\" />
+    <None Remove="APIs\" />
+    <None Remove="Helpers\" />
+    <None Remove="Flurl" />
+    <None Remove="Flurl.Http" />
     <None Remove="Managers\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="APIs\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Managers\" />
   </ItemGroup>
   <ItemGroup>
