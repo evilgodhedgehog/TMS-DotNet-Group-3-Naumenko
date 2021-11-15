@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using TMS_DotNet_Group_3_Naumenko.Logic.Models;
+using Newtonsoft.Json;
 
 namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
 {
@@ -27,7 +27,7 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
                     {
                         Console.WriteLine("Input a domain name to search");
                         var domain = CheckingEmptyInput();
-                        FormingRequestTOServer(domain, pathSegments, queryParams);
+                        FormingRequestToServer(domain, pathSegments, queryParams);
                     }
                     break;
                 case "2":
@@ -36,20 +36,20 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
                         var domain = CheckingEmptyInput();
                         Console.WriteLine("Input a zone name to search");
                         var zone = CheckingEmptyInput();
-                        FormingRequestTOServer(domain, zone, pathSegments, queryParams);
+                        FormingRequestToServer(domain, zone, pathSegments, queryParams);
                     }
                     break;
                 case "3":
                     {
                         Console.WriteLine("Input a zone name to search");
                         var zone = CheckingEmptyInput();
-                        FormingRequestTOServer(zone, pathSegments);
+                        FormingRequestToServer(zone, pathSegments);
                     }
                     break;
             }
         }
 
-        private void FormingRequestTOServer(string domain, List<string> pathSegments, List<string> queryParams)
+        private void FormingRequestToServer(string domain, List<string> pathSegments, List<string> queryParams)
         {
             pathSegments.Add("v1");
             pathSegments.Add("domains");
@@ -60,7 +60,7 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
             ServerResponseResult(pathSegments, queryParams);
         }
 
-        private void FormingRequestTOServer(string domain, string zone, List<string> pathSegments, List<string> queryParams)
+        private void FormingRequestToServer(string domain, string zone, List<string> pathSegments, List<string> queryParams)
         {
             pathSegments.Add("v1");
             pathSegments.Add("domains");
@@ -72,7 +72,7 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
             ServerResponseResult(pathSegments, queryParams);
         }
 
-        private void FormingRequestTOServer(string zone, List<string> pathSegments)
+        private void FormingRequestToServer(string zone, List<string> pathSegments)
         {
             pathSegments.Add("v1");
             pathSegments.Add("info");
