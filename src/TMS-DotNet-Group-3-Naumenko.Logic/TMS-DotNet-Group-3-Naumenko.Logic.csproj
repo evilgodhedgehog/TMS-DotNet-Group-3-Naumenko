@@ -17,6 +17,8 @@
     <None Remove="Flurl" />
     <None Remove="Flurl.Http" />
     <None Remove="Managers\" />
+    <None Remove="Flurl.Http" />
+    <None Remove="Flurl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

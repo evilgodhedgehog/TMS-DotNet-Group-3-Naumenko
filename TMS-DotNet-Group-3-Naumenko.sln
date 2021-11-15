@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1700.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS-DotNet-Group-3-Naumenko.UI", "src\TMS-DotNet-Group-3-Naumenko.UI\TMS-DotNet-Group-3-Naumenko.UI.csproj", "{8ADB03FC-5244-42D1-A4CF-D84A4346F91E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS-DotNet-Group-3-Naumenko.Logic", "src\TMS-DotNet-Group-3-Naumenko.Logic\TMS-DotNet-Group-3-Naumenko.Logic.csproj", "{4D3DF5CF-1E7F-4CF0-95D0-E65B264243F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS-DotNet-Group-3-Naumenko.Data", "src\TMS-DotNet-Group-3-Naumenko.Data\TMS-DotNet-Group-3-Naumenko.Data.csproj", "{ECF6D524-2401-48DD-93FE-C28CEB35BAB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS-DotNet-Group-3-Naumenko.UI", "src\TMS-DotNet-Group-3-Naumenko.UI\TMS-DotNet-Group-3-Naumenko.UI.csproj", "{689BB6B9-83B6-4D33-93DE-59DB033B795F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8ADB03FC-5244-42D1-A4CF-D84A4346F91E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8ADB03FC-5244-42D1-A4CF-D84A4346F91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8ADB03FC-5244-42D1-A4CF-D84A4346F91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8ADB03FC-5244-42D1-A4CF-D84A4346F91E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D3DF5CF-1E7F-4CF0-95D0-E65B264243F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D3DF5CF-1E7F-4CF0-95D0-E65B264243F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D3DF5CF-1E7F-4CF0-95D0-E65B264243F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{ECF6D524-2401-48DD-93FE-C28CEB35BAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECF6D524-2401-48DD-93FE-C28CEB35BAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECF6D524-2401-48DD-93FE-C28CEB35BAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689BB6B9-83B6-4D33-93DE-59DB033B795F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689BB6B9-83B6-4D33-93DE-59DB033B795F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689BB6B9-83B6-4D33-93DE-59DB033B795F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689BB6B9-83B6-4D33-93DE-59DB033B795F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,3 +1,4 @@
+
 using System;
 using System.Threading.Tasks;
 using TMS_DotNet_Group_3_Naumenko.Logic;
@@ -22,7 +23,7 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                     "\n\t1 - get random password (Andrey)" +
                     "\n\t2 - get Holiday on input date in Singapore (Katerina)" +
                     "\n\t3 - get Registered domain names (Dmitry)" +
-                    "\n\t4 - get (Tatyana)\n");
+                    "\n\t4 - get Weather and News the city (Tatyana)\n");
                 int mode;
                 while (true)
                 {
@@ -63,8 +64,8 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                         break;
                     case 3:
                         {
-                            //api = DomainApi;
-
+                            DomainManager domainManager = new();
+                            domainManager.Run();
                         }
                         break;
                     case 4:
