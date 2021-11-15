@@ -6,4 +6,10 @@
     <RootNamespace>TMS_DotNet_Group_3_Naumenko.Data</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
 </Project>
