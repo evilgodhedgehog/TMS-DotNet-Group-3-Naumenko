@@ -5,6 +5,7 @@ using TMS_DotNet_Group_3_Naumenko.Logic.Helpers;
 using TMS_DotNet_Group_3_Naumenko.Logic.Interfaces;
 using TMS_DotNet_Group_3_Naumenko.Logic.APIs;
 using System.Threading.Tasks;
+using TMS_DotNet_Group_3_Naumenko.Logic.Managers;
 
 namespace TMS_DotNet_Group_3_Naumenko.UI
 {
@@ -68,7 +69,7 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                         break;
                     case 4:
                         {
-                          Start start = new Start();
+                          WeatherManager start = new();
                           start.CreateResponce();
                           start.AdvertisementNews();
                         }

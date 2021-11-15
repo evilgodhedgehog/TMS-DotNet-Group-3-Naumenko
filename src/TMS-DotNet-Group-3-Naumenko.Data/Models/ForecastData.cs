@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TMS_DotNet_Group_3_Naumenko.Data
+namespace TMS_DotNet_Group_3_Naumenko.Data.Models
 {
     public class WetherMenu
     {

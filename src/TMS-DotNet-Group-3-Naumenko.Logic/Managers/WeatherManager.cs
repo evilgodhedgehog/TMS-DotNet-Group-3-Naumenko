@@ -2,11 +2,11 @@
 using System;
 using System.IO;
 using System.Net;
-using TMS_DotNet_Group_3_Naumenko.Data;
+using TMS_DotNet_Group_3_Naumenko.Data.Models;
 
-namespace TMS_DotNet_Group_3_Naumenko.Logic
+namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
 {
-    public class Start
+    public class WeatherManager
     {
         public void CreateResponce()
         {
@@ -95,3 +95,4 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic
         }
     }
 }
+
