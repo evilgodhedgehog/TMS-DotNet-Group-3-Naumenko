@@ -8,5 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TMS-DotNet-Group-3-Naumenko.Logic\TMS-DotNet-Group-3-Naumenko.Logic.csproj" />
+    <ProjectReference Include="..\TMS-DotNet-Group-3-Naumenko.Data\TMS-DotNet-Group-3-Naumenko.Data.csproj" />
   </ItemGroup>
 </Project>
