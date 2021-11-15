@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using TMS_DotNet_Group_3_Naumenko.Logic;
 using TMS_DotNet_Group_3_Naumenko.Logic.Helpers;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TMS_DotNet_Group_3_Naumenko.UI
 {
-    class Program
+    internal class Program
     {
         private static async Task Main(string[] args)
         {
@@ -21,7 +21,7 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                     "\n\t1 - get random password (Andrey)" +
                     "\n\t2 - get Holiday on input date in Singapore (Katerina)" +
                     "\n\t3 - get Registered domain names (Dmitry)" +
-                    "\n\t4 - ... (Tatyana)\n");
+                    "\n\t4 - get (Tatyana)\n");
                 int mode;
                 while (true)
                 {
@@ -68,7 +68,9 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                         break;
                     case 4:
                         {
-
+                          Start start = new Start();
+                          start.CreateResponce();
+                          start.AdvertisementNews();
                         }
                         break;                        
                 }
