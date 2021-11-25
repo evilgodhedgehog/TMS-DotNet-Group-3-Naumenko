@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using TMS_DotNet_Group_3_Naumenko.Logic.Models;
 using Newtonsoft.Json;
+using TMS_DotNet_Group_3_Naumenko.Data.Models;
+using System.Threading.Tasks;
+using TMS_DotNet_Group_3_Naumenko.Logic.Services;
 
 namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
 {
@@ -11,7 +14,7 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
         List<string> pathSegments = new();
         List<string> queryParams = new();
 
-        public void Run()
+        public async Task RunAsync()
         {
             Console.WriteLine();
             Console.WriteLine("Hello. Welcome to the registered domain names search.\n" +
@@ -27,7 +30,7 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
                     {
                         Console.WriteLine("Input a domain name to search");
                         var domain = CheckingEmptyInput();
-                        FormingRequestToServer(domain, pathSegments, queryParams);
+                        await FormingRequestToServerAsync(domain);
                     }
                     break;
                 case "2":
@@ -36,20 +39,20 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
                         var domain = CheckingEmptyInput();
                         Console.WriteLine("Input a zone name to search");
                         var zone = CheckingEmptyInput();
-                        FormingRequestToServer(domain, zone, pathSegments, queryParams);
+                        await FormingRequestToServerAsync(domain, zone);
                     }
                     break;
                 case "3":
                     {
                         Console.WriteLine("Input a zone name to search");
                         var zone = CheckingEmptyInput();
-                        FormingRequestToServer(zone, pathSegments);
+                        await FormingRequestToServerAsync(zone, pathSegments);
                     }
                     break;
             }
         }
 
-        private void FormingRequestToServer(string domain, List<string> pathSegments, List<string> queryParams)
+        private async Task FormingRequestToServerAsync(string domain)
         {
             pathSegments.Add("v1");
             pathSegments.Add("domains");
@@ -57,10 +60,10 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
 
             queryParams.Add($"domain={domain}");
 
-            ServerResponseResult(pathSegments, queryParams);
+            await ServerResponseResultAsync();
         }
 
-        private void FormingRequestToServer(string domain, string zone, List<string> pathSegments, List<string> queryParams)
+        private async Task FormingRequestToServerAsync(string domain, string zone)
         {
             pathSegments.Add("v1");
             pathSegments.Add("domains");
@@ -69,30 +72,40 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
             queryParams.Add($"domain={domain}");
             queryParams.Add($"zone={zone}");
 
-            ServerResponseResult(pathSegments, queryParams);
+            await ServerResponseResultAsync();
         }
 
-        private void FormingRequestToServer(string zone, List<string> pathSegments)
+        private async Task FormingRequestToServerAsync(string zone, List<string> pathSegments)
         {
             pathSegments.Add("v1");
             pathSegments.Add("info");
             pathSegments.Add("stat");
             pathSegments.Add($"{zone}");
 
-            ServerResponseResult(pathSegments, queryParams);
+            await ServerResponseResultAsync();
         }
 
-        private void ServerResponseResult(List<string> pathSegments, List<string> queryParams)
+        private async Task ServerResponseResultAsync()
         {
             DomainAPI web = new("https://api.domainsdb.info", pathSegments, queryParams);
 
             var getResults = web.GetData().Result;
 
+            var apiModel = new ApiModel
+            {
+                Web = "https://api.domainsdb.info",
+                PathSegments = pathSegments,
+                QueryParams = queryParams,
+            };
+
+            var url = ApiService<DomainCommonModel>.PrepareRequestAsync(apiModel);
+            var result = await ApiService<DomainCommonModel>.GetResultAsync(url);
+
             Console.WriteLine();
 
-            foreach (var result in getResults.domains)
+            foreach (var domain in result.domains)
             {
-                Console.WriteLine($"{result.domain} {result.CNAME} {result.country}");
+                Console.WriteLine($"{domain.domain} {domain.CNAME} {domain.country}");
             }
 
             Console.WriteLine();

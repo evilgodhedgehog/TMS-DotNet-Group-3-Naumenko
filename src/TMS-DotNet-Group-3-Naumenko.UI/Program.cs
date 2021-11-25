@@ -7,6 +7,8 @@ using TMS_DotNet_Group_3_Naumenko.Logic.Interfaces;
 using TMS_DotNet_Group_3_Naumenko.Logic.APIs;
 using System.Threading.Tasks;
 using TMS_DotNet_Group_3_Naumenko.Logic.Managers;
+using TMS_DotNet_Group_3_Naumenko.Data.Models;
+using TMS_DotNet_Group_3_Naumenko.Logic.Services;
 
 namespace TMS_DotNet_Group_3_Naumenko.UI
 {
@@ -41,8 +43,9 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                     case 1:
                         {
                             api = new RandomPasswordApi();
-                            api.Initialize();
-                            var result = await api.GetQueryResultAsync();
+                            var apiModel = api.Initialize();
+                            var url = ApiService<PasswordModel>.PrepareRequestAsync(apiModel);
+                            var result = await ApiService<PasswordModel>.GetResultAsync(url);
                             api.ProcessResult(result);
                         }
                         break;
@@ -52,9 +55,10 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                           
                           try
                           {
-                             api.Initialize();
-                             var result = await api.GetQueryResultAsync();
-                             api.ProcessResult(result);
+                                var apiModel = api.Initialize();
+                                var url = ApiService<HolidayModel>.PrepareRequestAsync(apiModel);
+                                var result = await ApiService<HolidayModel>.GetResultsAsync(url);
+                                api.ProcessResult(result);
                           }
                           catch (Exception exception)
                           {
@@ -65,7 +69,7 @@ namespace TMS_DotNet_Group_3_Naumenko.UI
                     case 3:
                         {
                             DomainManager domainManager = new();
-                            domainManager.Run();
+                            await domainManager.RunAsync();
                         }
                         break;
                     case 4:

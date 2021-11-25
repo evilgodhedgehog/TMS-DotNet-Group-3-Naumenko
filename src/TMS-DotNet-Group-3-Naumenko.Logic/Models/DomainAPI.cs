@@ -31,12 +31,12 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Models
             return result;
         }
 
-        void IApi.Initialize()
+        void IApi.ProcessResult<T>(T result)
         {
             throw new NotImplementedException();
         }
 
-        void IApi.ProcessResult<T>(T result)
+        public ApiModel Initialize()
         {
             throw new NotImplementedException();
         }
