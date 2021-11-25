@@ -67,7 +67,10 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
 
         public void AdvertisementNews()
         {
-            WebRequest request = WebRequest.Create("https://newsapi.org/v2/everything?domains=bbc.com&q=minsk&language=en&apiKey=3fcb1ccc7c344009acfca65a838ec527");
+            WebRequest request = WebRequest.Create(
+                "https://newsapi.org/v2/everything" +
+                "?domains=bbc.com&q=minsk&language=en&apiKey=3fcb1ccc7c344009acfca65a838ec527");
+
             using (WebResponse response = request.GetResponse())
             using (Stream newStream = response.GetResponseStream())
             using (StreamReader reader = new StreamReader(newStream))

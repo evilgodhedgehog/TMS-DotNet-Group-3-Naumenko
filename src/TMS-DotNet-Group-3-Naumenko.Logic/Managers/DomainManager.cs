@@ -88,18 +88,14 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Managers
 
             var getResults = web.GetData().Result;
 
-            foreach (var result in getResults)
-            {
-                foreach (var values in result.Value)
-                {
-                    Console.WriteLine();
+            Console.WriteLine();
 
-                    foreach (var element in values)
-                    {
-                        Console.WriteLine(element);
-                    }
-                }
+            foreach (var result in getResults.domains)
+            {
+                Console.WriteLine($"{result.domain} {result.CNAME} {result.country}");
             }
+
+            Console.WriteLine();
         }
 
         private string CheckingEmptyInput()

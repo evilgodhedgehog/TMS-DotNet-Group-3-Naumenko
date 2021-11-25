@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using TMS_DotNet_Group_3_Naumenko.Logic.Interfaces;
 using Flurl;
 using Flurl.Http;
+using TMS_DotNet_Group_3_Naumenko.Data.Models;
 
 namespace TMS_DotNet_Group_3_Naumenko.Logic.Models
 {
@@ -20,12 +21,13 @@ namespace TMS_DotNet_Group_3_Naumenko.Logic.Models
             QueryParams = queryParams;
         }
 
-        public async Task<dynamic> GetData()
+        public async Task<DomainCommonModel> GetData()
         {
             var result = await Web
                .AppendPathSegments(PathSegments)
                .SetQueryParams(QueryParams)
-               .GetJsonAsync();
+               .GetJsonAsync<DomainCommonModel>();
+
             return result;
         }
 

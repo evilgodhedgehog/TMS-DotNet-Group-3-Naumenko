@@ -3,26 +3,32 @@ using System.Collections.Generic;
 
 namespace TMS_DotNet_Group_3_Naumenko.Data.Models
 {
+    public class MX
+    {
+        public string exchange { get; set; }
+        public int priority { get; set; }
+    }
+
     public class Domain
     {
         public string domain { get; set; }
-        public DateTime Create_date { get; set; }
-        public DateTime Update_date { get; set; }
-        public string Country { get; set; }
-        public string IsDead { get; set; }
-        public List<string> A { get; set; }
-        public List<string> NS { get; set; }
+        public DateTime create_date { get; set; }
+        public DateTime update_date { get; set; }
+        public string country { get; set; }
+        public string isDead { get; set; }
+        public IList<string> A { get; set; }
+        public IList<string> NS { get; set; }
         public object CNAME { get; set; }
-        public object MX { get; set; }
-        public object TXT { get; set; }
+        public IList<MX> MX { get; set; }
+        public IList<string> TXT { get; set; }
     }
 
-    public class Response
+    public class DomainCommonModel
     {
-        public List<Domain> Domains { get; set; }
-        public int Total { get; set; }
-        public string Time { get; set; }
-        public object Next_page { get; set; }
+        public IList<Domain> domains { get; set; }
+        public int total { get; set; }
+        public string time { get; set; }
+        public object next_page { get; set; }
     }
 }
 
